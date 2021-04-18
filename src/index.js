@@ -1,13 +1,8 @@
 // change require to es6 import style
-import $ from 'jquery';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import './styles.scss';
 
-const main = $('#main');
-let numSeconds = 0;
+const App = () => <div className="test">All the REACT are belong to us!</div>;
 
-function increment() {
-  numSeconds += 1;
-  main.text(`You've been on this page for ${numSeconds} seconds.`);
-}
-
-setInterval(increment, 1000);
+ReactDOM.render(<App />, document.getElementById('main'));
