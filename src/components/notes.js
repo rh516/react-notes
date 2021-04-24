@@ -8,8 +8,13 @@ const Notes = (props) => {
         return (
           <Note
             key={id}
+            id={id}
             title={note.title}
             body={note.body}
+            x={note.x}
+            y={note.y}
+            z={note.z}
+            deleteNote={props.deleteNote}
           />
         );
       })}

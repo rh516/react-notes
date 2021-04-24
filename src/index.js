@@ -23,11 +23,17 @@ class App extends Component {
     id += 1;
   }
 
+  deleteNote = (noteID) => {
+    this.setState((prevState) => ({
+      notes: prevState.notes.delete(noteID),
+    }));
+  }
+
   render() {
     return (
       <div>
         <CreateNote addNote={this.addNote} />
-        <Notes notes={this.state.notes} />
+        <Notes notes={this.state.notes} deleteNote={this.deleteNote} />
       </div>
     );
   }

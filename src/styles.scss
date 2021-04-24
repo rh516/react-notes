@@ -2,3 +2,18 @@ body, html {
   font-family: "Roboto", sans-serif;
   height: 100%;
 }
+
+#create-note-container {
+  display: flex;
+  flex-direction: column;
+  width: 50em;
+}
+
+.handle {
+  text-align: center;
+  border: 3px black solid;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 250px;
+}
