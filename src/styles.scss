@@ -9,11 +9,21 @@ body, html {
   width: 50em;
 }
 
-.handle {
+.note-container {
   text-align: center;
   border: 3px black solid;
   display: flex;
   flex-direction: column;
   width: 300px;
   height: 250px;
+  background-color: white;
 }
+
+.edit-title-container, .edit-body-container {
+  margin-top: 1em;
+  
+  textarea {
+    width: 90%
+  }
+}
+

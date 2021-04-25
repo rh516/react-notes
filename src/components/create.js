@@ -39,16 +39,12 @@ export default class CreateNote extends Component {
     return (
       <div id="create-note-container">
         <TextareaAutosize
-          cols="60"
-          rows="8"
           className="title-container"
           placeholder="Title"
           value={this.state.title}
           onChange={this.handleTitleChange}
         />
         <TextareaAutosize
-          cols="60"
-          rows="8"
           className="body-container"
           placeholder="Body"
           value={this.state.body}
