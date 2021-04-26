@@ -13,8 +13,8 @@ const Notes = (props) => {
             body={note.body}
             x={note.x}
             y={note.y}
-            z={note.z}
             deleteNote={props.deleteNote}
+            updateNote={props.updateNote}
           />
         );
       })}

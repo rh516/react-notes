@@ -9,8 +9,6 @@ export default class Note extends Component {
     this.state = {
       title: this.props.title,
       body: this.props.body,
-      x: this.props.x,
-      y: this.props.y,
       isEditing: false,
     };
   }
@@ -52,6 +50,11 @@ export default class Note extends Component {
 
   handleEditSubmit = () => {
     this.setState({ isEditing: false });
+
+    this.props.updateNote(this.props.id, {
+      title: this.state.title,
+      body: this.state.body,
+    });
   }
 
   handleEditClick = () => {
@@ -63,7 +66,7 @@ export default class Note extends Component {
   }
 
   handleDrag = (event, data) => {
-    this.setState({
+    this.props.updateNote(this.props.id, {
       x: data.x,
       y: data.y,
     });
@@ -75,7 +78,7 @@ export default class Note extends Component {
         handle=".handle"
         grid={[5, 5]}
         defaultPosition={{ x: 0, y: 0 }}
-        position={{ x: this.state.x, y: this.state.y }}
+        position={{ x: this.props.x, y: this.props.y }}
         onDrag={this.handleDrag}
       >
         <div className="note-container">

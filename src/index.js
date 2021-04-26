@@ -4,8 +4,7 @@ import './styles.scss';
 import { Map } from 'immutable';
 import Notes from './components/notes';
 import CreateNote from './components/create';
-
-let id = 1;
+import * as db from './services/datastore';
 
 class App extends Component {
   constructor(props) {
@@ -16,24 +15,32 @@ class App extends Component {
     };
   }
 
+  componentDidMount() {
+    db.fetchNotes((notes) => {
+      this.setState({
+        // eslint-disable-next-line new-cap
+        notes: Map(notes),
+      });
+    });
+  }
+
   addNote = (note) => {
-    this.setState((prevState) => ({
-      notes: prevState.notes.set(id, note),
-    }));
-    id += 1;
+    db.addNote(note);
   }
 
   deleteNote = (noteID) => {
-    this.setState((prevState) => ({
-      notes: prevState.notes.delete(noteID),
-    }));
+    db.deleteNote(noteID);
+  }
+
+  updateNote = (noteID, fields) => {
+    db.updateNote(noteID, fields);
   }
 
   render() {
     return (
       <div>
         <CreateNote addNote={this.addNote} />
-        <Notes notes={this.state.notes} deleteNote={this.deleteNote} />
+        <Notes notes={this.state.notes} deleteNote={this.deleteNote} updateNote={this.updateNote} />
       </div>
     );
   }

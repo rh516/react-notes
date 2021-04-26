@@ -25,7 +25,6 @@ export default class CreateNote extends Component {
       body: this.state.body,
       x: 0,
       y: 0,
-      z: 0,
     };
 
     this.props.addNote(note);
