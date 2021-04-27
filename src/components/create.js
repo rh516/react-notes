@@ -38,19 +38,19 @@ export default class CreateNote extends Component {
     return (
       <div id="create-note-container">
         <TextareaAutosize
-          className="title-container"
+          id="title-container"
           placeholder="Title"
           value={this.state.title}
           onChange={this.handleTitleChange}
         />
         <TextareaAutosize
-          className="body-container"
+          id="body-container"
           placeholder="Body"
           value={this.state.body}
           onChange={this.handleBodyChange}
         />
         <input
-          className="submit-btn"
+          id="submit-button"
           type="submit"
           value="Create"
           onClick={this.handleSubmit}

@@ -1,29 +1,89 @@
+@font-face {
+  font-family: Indie;
+  src: url('./fonts/IndieFlower-Regular.ttf');
+}
+
 body, html {
-  font-family: "Roboto", sans-serif;
+  font-family: Indie;
   height: 100%;
+  background-image: url('./imgs/noteBackground.jpeg');
 }
 
 #create-note-container {
   display: flex;
   flex-direction: column;
-  width: 50em;
+  align-items: center;
+  width: 30em;
+  margin: auto;
+  margin-top: 1.5em;
+
+  textarea {
+    margin-bottom: 1em;
+    width: 100%
+  }
+
+  #submit-button {
+    width: 30%;
+    padding: 0.5em
+  }
 }
 
 .note-container {
-  text-align: center;
-  border: 3px black solid;
   display: flex;
   flex-direction: column;
-  width: 300px;
-  height: 250px;
-  background-color: white;
+  text-align: center;
+  border: 1px black solid;
+  background-color: #ffffaa;
+  min-width: 300px;
+  min-height: 250px;
+  position: absolute;
 }
+
+.note-buttons-container {
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    padding: 0.75em;
+    border: none;
+    background: none;
+  }
+}
+
+.note-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1em;
+
+  h2 {
+    text-transform: capitalize;
+    margin-bottom: 0.5em;
+  }
+  img {
+    width: 80%
+  }
+}
+
+.note-body-container {
+  ul {
+    margin-right: 2em;
+  }
+}
+
 
 .edit-title-container, .edit-body-container {
   margin-top: 1em;
   
   textarea {
-    width: 90%
+    width: 80%
+  }
+}
+
+.edit-submit-container {
+  margin-top: 1em;
+  button {
+    padding: 0.5em;
   }
 }
 
