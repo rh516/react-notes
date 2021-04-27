@@ -40,7 +40,11 @@ class App extends Component {
     return (
       <div>
         <CreateNote addNote={this.addNote} />
-        <Notes notes={this.state.notes} deleteNote={this.deleteNote} updateNote={this.updateNote} />
+        <Notes
+          notes={this.state.notes}
+          deleteNote={this.deleteNote}
+          updateNote={this.updateNote}
+        />
       </div>
     );
   }
